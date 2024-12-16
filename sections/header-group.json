@@ -56,10 +56,42 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "promotion_xXpKxa": {
+      "type": "promotion",
+      "blocks": {
+        "promotion_G3X6PR": {
+          "type": "promotion",
+          "settings": {
+            "promotion_block_text_id": "Welcome to our store"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_G3X6PR"
+      ],
+      "settings": {
+        "promotion_color_scheme_id": "",
+        "promotion_enable_custom_background_color_id": false,
+        "promotion_custom_background_color_id": "#000000",
+        "promotion_custom_text_color_id": "#ffffff",
+        "promotion_enable_line_divider_id": true,
+        "promotion_bottom_color_line_divider_id": "#000000",
+        "promotion_background_height_id": 40,
+        "promotion_font_size_id": 16,
+        "promotion_animation_mobile_id": 10,
+        "promotion_animation_tablet_id": 15,
+        "promotion_animation_large_id": 20
+      }
     }
   },
   "order": [
+<<<<<<< HEAD
     "promotion_6xx4DV",
+=======
+    "promotion_xXpKxa",
+    "announcement-bar",
+>>>>>>> b47b389eb62e4f6eb61c6e7a9a774ab4064cee14
     "header"
   ]
 }
