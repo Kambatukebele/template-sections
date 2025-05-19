@@ -1,0 +1,223 @@
+<section class="product-carousel">
+  <div class="product-carousel__container">
+    <div class="product-carousel__wrapper">
+      <!-- collection Image -->
+      <div class="product-carousel__collection">
+        <div class="product-carousel__collection-image">
+          {{- 'collection-4' | placeholder_svg_tag: 'product-carousel__collection-img' -}}
+        </div>
+        <div class="product-carousel__collection-info">
+          <span class="product-carousel__collection-subtitle">About us</span>
+          <h2 class="product-carousel__collection-title">Take care of your nails pains them color awesome</h2>
+          <p class="product-carousel__collection-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua.
+          </p>
+          {% render 'button',
+            href: '#',
+            title: 'Me faire rappeler',
+            class_modifier: 'product-carousel__collection-button'
+          %}
+        </div>
+      </div>
+      <!-- Products -->
+      <div class="product-carousel__products">
+        {%- for item in (1..4) -%}
+          <!-- loop here -->
+          <a href="#" class="product-carousel__product">
+            <div class="product-carousel__product-image-block">
+              {{- 'product-1' | placeholder_svg_tag: 'product-carousel__product-image' -}}
+            </div>
+            <div class="product-carousel__product-info">
+              <span class="product-carousel__product-description">Pure Radiance Skincare</span>
+              <h4 class="product-carousel__product-title">Crystal Clear Cleansing Foam</h4>
+              <span class="product-carousel__product-price">$25.00</span>
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+    .product-carousel {
+      padding-top: {{- section.settings.product_carousel_paddingY -}} px;
+      padding-bottom: {{- section.settings.product_carousel_paddingY -}} px;
+      width: 100%;
+      height: fit-content;
+    }
+    .product-carousel__container{
+      max-width: {{ settings.page_width }}px;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .product-carousel__wrapper{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      gap: 50px;
+    }
+    /* collection Image */
+    .product-carousel__collection{
+      width: 100%;
+      height: auto;
+      min-width: 200px;
+    }
+    .product-carousel__collection-image{
+      min-width: 200px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid rgba(46, 46, 46, 0.57);
+    }
+    .product-carousel__collection-img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .product-carousel__collection-info{
+      min-width: 200px;
+      height: auto;
+      padding: 10px;
+    }
+    .product-carousel__collection-subtitle{
+      font-size: 14px;
+      font-family: {{ settings.type_body_font.family }};
+      font-weight: {{ settings.type_body_font.weight }};
+      color: {{ settings.type_body_font.color }};
+    }
+    .product-carousel__collection-title{
+      font-size: 20px !important;
+      font-family: {{ settings.type_header_font.family }};
+      font-weight: {{ settings.type_header_font.weight }};
+      color: {{ settings.type_header_font.color }};
+    }
+    .product-carousel__collection-description{
+      font-size: 16px;
+      font-family: {{ settings.type_body_font.family }};
+      font-weight: {{ settings.type_body_font.weight }};
+
+    }
+    .product-carousel__collection-button{
+      background-color: black;
+      color: white;
+    }
+    /* Product carousel */
+    .product-carousel__products{
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 10px 10px;
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+    }
+    .product-carousel__product{
+      border-radius: 10px;
+      border: 1px solid rgba(46, 46, 46, 0.57);
+      width: 100%;
+      height: auto;
+      padding-left: 5px;
+      text-decoration: none;
+    }
+    .product-carousel__product-info{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 10px;
+    }
+    .product-carousel__product-description{
+      font-size: 14px;
+      font-family: {{ settings.type_body_font.family }};
+      font-weight: {{ settings.type_body_font.weight }};
+      color: black;
+    }
+    .product-carousel__product-title{
+      font-size: 20px !important;
+      font-family: {{ settings.type_header_font.family }};
+      font-weight: {{ settings.type_header_font.weight }};
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+      color: black;
+    }
+    .product-carousel__product-price{
+      font-size: 16px;
+      font-family: {{ settings.type_body_font.family }};
+      font-weight: {{ settings.type_body_font.weight }};
+      color: black;
+    }
+  @media screen and (min-width: 750px) {
+     /* Product carousel */
+    .product-carousel__products{
+      gap: 20px 20px;
+    }
+    .product-carousel__product{
+      padding-left: 10px;
+    }
+  }
+
+
+  {% comment %} @media screen and (min-width: 990px) {
+
+  } {% endcomment %}
+  @media screen and (min-width: 1200px) {
+    .product-carousel__wrapper{
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    /* collection Image */
+    .product-carousel__collection{
+      width: 50%;
+      min-width: 600px;
+    }
+    .product-carousel__collection-image{
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    /* Product carousel */
+    .product-carousel__products{
+      grid-gap: 20px 20px;
+      justify-items: center;
+      align-items: center;
+      width: 50%;
+      min-width: 500px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product carousel",
+  "class": "product_carousel",
+  "settings": [
+    {
+      "type": "range",
+      "id": "product_carousel_paddingY",
+      "label": "Padding top and bottom",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "default": 0,
+      "info": "Padding top and bottom of the carousel"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Product carousel",
+      "settings": {
+        "product_carousel_paddingY": 0
+      },
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
