@@ -1,0 +1,218 @@
+<section class="wrapper">
+  {%- if section.blocks.size > 0 -%}
+    {%- for element in section.blocks -%}
+      {%- case element.type -%}
+        {%- when 'scrolling_element' -%}
+          <div
+            style="text-transform: {{ section.settings.text_scrolling_text_transform }};"
+            class="item item{{- forloop.index }} {{- element.shopify_attributes -}}"
+          >
+            {{ element.settings.scrolling_element_text }}
+          </div>
+        {%- else -%}
+      {%- endcase -%}
+    {%- endfor -%}
+  {%- else -%}
+    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item1">
+      Example text goes here
+    </div>
+    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item2">
+      Example text goes here
+    </div>
+    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item3">
+      Example text goes here
+    </div>
+    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item4">
+      Example text goes here
+    </div>
+    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item5">
+      Example text goes here
+    </div>
+    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item6">
+      Example text goes here
+    </div>
+    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item7">
+      Example text goes here
+    </div>
+    <div style="text-transform: {{ section.settings.text_scrolling_text_transform }};" class="item item8">
+      Example text goes here
+    </div>
+  {%- endif -%}
+</section>
+<style>
+  .wrapper {
+    width: 100%;
+    margin-inline: auto;
+    position: relative;
+    height: 50px;
+    border-bottom: {% if section.settings.show_line_separator %} 1px solid {{ section.settings.border_bottom_color }} {% else %} none {% endif %};
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background-color: {{ section.settings.text_scrolling_background_color }};
+     color: {{ section.settings.text_scrolling_text_color }};
+  }
+  @keyframes scrollLeft {
+    to {
+      left: -400px;
+    }
+  }
+  .item {
+    position: absolute;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    left: max(calc(400px * 8), 100%);
+    animation-name: scrollLeft;
+    animation-duration: {{- section.settings.text_scrolling_animation_duration -}}s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .item1 {
+    animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 1) * -1);
+  }
+  .item2 {
+    animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 2) * -1);
+  }
+  .item3 {
+    animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 3) * -1);
+  }
+  .item4 {
+    animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 4) * -1);
+  }
+  .item5 {
+    animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 5) * -1);
+  }
+  .item6 {
+    animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 6) * -1);
+  }
+  .item7 {
+    animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 7) * -1);
+  }
+  .item8 {
+    animation-delay: calc({{- section.settings.text_scrolling_animation_duration -}}s / 8 * (8 - 8) * -1);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Announcement-bar",
+  "class": "announcement-bar-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_line_separator",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "color",
+      "id": "border_bottom_color",
+      "label": "Border bottom color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Background and text color"
+    },
+    {
+      "type": "color",
+      "id": "text_scrolling_background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_scrolling_text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "text_scrolling_animation_duration",
+      "label": "Animation duration",
+      "min": 30,
+      "max": 100,
+      "unit": "s",
+      "step": 1,
+      "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Text transform"
+    },
+    {
+      "type": "select",
+      "id": "text_scrolling_text_transform",
+      "label": "Text transform",
+      "options": [
+        {
+          "label": "none",
+          "value": "none"
+        },
+        {
+          "label": "uppercase",
+          "value": "uppercase"
+        },
+        {
+          "label": "lowercase",
+          "value": "lowercase"
+        },
+        {
+          "label": "capitalize",
+          "value": "capitalize"
+        }
+      ],
+      "default": "none"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Scrolling text",
+      "type": "scrolling_element",
+      "limit": 8,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "text",
+          "id": "scrolling_element_text",
+          "label": "Text",
+          "default": "Write something here",
+          "placeholder": "Your goes here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar",
+      "settings": {
+        "show_line_separator": true,
+        "border_bottom_color": "#000000",
+        "text_scrolling_background_color": "#ffffff",
+        "text_scrolling_text_color": "#000000",
+        "text_scrolling_animation_duration": 50,
+        "text_scrolling_text_transform": "none"
+      },
+      "blocks": [
+        {
+          "type": "scrolling_element"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
