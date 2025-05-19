@@ -38,9 +38,22 @@
         "promotion_animation_tablet_id": 15,
         "promotion_animation_large_id": 20
       }
+    },
+    "announcement_WBqPJJ": {
+      "type": "announcement",
+      "name": "Announcement bar",
+      "settings": {
+        "show_line_separator": true,
+        "border_bottom_color": "#000000",
+        "text_scrolling_background_color": "#ffffff",
+        "text_scrolling_text_color": "#000000",
+        "text_scrolling_animation_duration": 50,
+        "text_scrolling_text_transform": "none"
+      }
     }
   },
   "order": [
-    "promotion_WHnBaJ"
+    "promotion_WHnBaJ",
+    "announcement_WBqPJJ"
   ]
 }
