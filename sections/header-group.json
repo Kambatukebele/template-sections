@@ -10,6 +10,37 @@
 {
   "name": "t:sections.header.name",
   "type": "header",
-  "sections": {},
-  "order": []
+  "sections": {
+    "promotion_WHnBaJ": {
+      "type": "promotion",
+      "blocks": {
+        "promotion_ncgqjU": {
+          "type": "promotion",
+          "settings": {
+            "promotion_block_text_id": "Welcome to our store"
+          }
+        }
+      },
+      "block_order": [
+        "promotion_ncgqjU"
+      ],
+      "name": "Promotion",
+      "settings": {
+        "promotion_color_scheme_id": "",
+        "promotion_enable_custom_background_color_id": false,
+        "promotion_custom_background_color_id": "#000000",
+        "promotion_custom_text_color_id": "#ffffff",
+        "promotion_enable_line_divider_id": true,
+        "promotion_bottom_color_line_divider_id": "#000000",
+        "promotion_background_height_id": 40,
+        "promotion_font_size_id": 16,
+        "promotion_animation_mobile_id": 10,
+        "promotion_animation_tablet_id": 15,
+        "promotion_animation_large_id": 20
+      }
+    }
+  },
+  "order": [
+    "promotion_WHnBaJ"
+  ]
 }
