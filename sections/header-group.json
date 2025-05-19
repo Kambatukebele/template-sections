@@ -75,14 +75,6 @@
       ],
       "name": "Announcement bar",
       "settings": {
-<<<<<<< HEAD
-        "show_line_separator": true,
-        "border_bottom_color": "#000000",
-        "text_scrolling_background_color": "#000000",
-        "text_scrolling_text_color": "#ffffff",
-        "text_scrolling_animation_duration": 100,
-        "text_scrolling_text_transform": "uppercase"
-=======
         "promotion_color_scheme_id": "",
         "promotion_enable_custom_background_color_id": false,
         "promotion_custom_background_color_id": "#000000",
@@ -94,7 +86,6 @@
         "promotion_animation_mobile_id": 10,
         "promotion_animation_tablet_id": 15,
         "promotion_animation_large_id": 60
->>>>>>> 79bf5798ade87b2b79ce51c290636d113a6fa290
       }
     },
     "header": {
@@ -117,8 +108,5 @@
       }
     }
   },
-  "order": [
-    "announcement_bar_cxBeBf",
-    "header"
-  ]
+  "order": ["announcement_bar_cxBeBf", "header"]
 }
