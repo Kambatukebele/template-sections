@@ -8,56 +8,6 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "hero_xrUJfF": {
-      "type": "hero",
-      "blocks": {
-        "heading_RNHLkT": {
-          "type": "heading",
-          "settings": {
-            "hero__heading": "Améliorez vos sensations, et transformez votre intimité – naturellement."
-          }
-        },
-        "description_wRDKYh": {
-          "type": "description",
-          "settings": {
-            "hero__description": "Découvrez nos 5 produits ciblés pour les hommes et les femmes. Une gamme discrète, puissante et 100 % axée résultats. Paiement confidentiel, livraison rapide et appel privé disponible pour conseils personnalisés."
-          }
-        },
-        "buttons_eDdkQJ": {
-          "type": "buttons",
-          "settings": {
-            "hero__button_text": "Découvrir nos produits",
-            "hero__button_url": "",
-            "hero__button_text_color": "#ffffff",
-            "hero__button_bg_color": "#000000"
-          }
-        }
-      },
-      "block_order": [
-        "heading_RNHLkT",
-        "description_wRDKYh",
-        "buttons_eDdkQJ"
-      ],
-      "name": "Hero",
-      "settings": {
-        "hero__background_image": "shopify://shop_images/pexels-cottonbro-9374659.jpg",
-        "hero__background_checkbox": true,
-        "hero__background_color": "linear-gradient(180deg, rgba(20, 68, 167, 0.28) 6%, rgba(221, 202, 182, 1) 100%)",
-        "hero__heading_color": "#ffffff",
-        "hero__description_color": "#ffffff"
-      }
-    },
-    "product_carousel_EFXgGR": {
-      "type": "product-carousel",
-      "name": "Product carousel",
-      "settings": {
-        "product_carousel_paddingY": 40
-      }
-    }
-  },
-  "order": [
-    "hero_xrUJfF",
-    "product_carousel_EFXgGR"
-  ]
+  "sections": {},
+  "order": []
 }
